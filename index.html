@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>CRM Optimist</title>
-  </head>
-  <body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Optimist</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
     <h1>CRM Optimist</h1>
-    <p>Primer commit desde iPhone.</p>
-  </body>
+    <p>Gestiona tus clientes y oportunidades</p>
+  </header>
+
+  <main>
+    <section id="clientes">
+      <h2>Clientes</h2>
+      <ul id="lista-clientes">
+        <li>Cargando clientes...</li>
+      </ul>
+    </section>
+
+    <section id="formulario">
+      <h2>Nuevo cliente</h2>
+      <form id="form-cliente">
+        <label>
+          Nombre:
+          <input type="text" id="nombre" required />
+        </label>
+        <label>
+          Email:
+          <input type="email" id="email" required />
+        </label>
+        <label>
+          Teléfono:
+          <input type="tel" id="telefono" />
+        </label>
+        <button type="submit">Agregar cliente</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
 </html>
