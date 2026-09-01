@@ -2,18 +2,67 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="author" content="Pagos digitales Klap"/>
+  <meta name="author" content="Pagos digitales Klap">
   <title>Optimist | Sistema de Enfriamiento Hogar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f4f6f9;
       color: #333;
+      padding-top: 70px; /* Espacio para la navbar fija */
     }
 
+    /* Navbar fija superior */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: #0b1f3a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .navbar-title {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-subtitle {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-left: 8px;
+    }
+
+    /* Header original (ahora debajo de la navbar) */
     header {
       background: #0b1f3a;
       color: white;
@@ -70,30 +119,49 @@
       padding: 20px;
       font-size: 14px;
     }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 0 15px;
+      }
+
+      .navbar-title {
+        font-size: 16px;
+      }
+
+      .navbar-subtitle {
+        display: none;
+      }
+
+      body {
+        padding-top: 60px;
+      }
+    }
   </style>
-
-
-
-<!-- Script Oficial Producción Klap
-  <script src="https://sandbox.mcdesaqa.cl/pagos/checkout-flex/v1/main.min.js"></script>
-  
-  // Klap-flex
-  <script type=“text/javascript”>
-      function payOrder(){
-      KLAP_FLEX.init({ orderId: order_id });}
-  </script>
--->
-  <!--script type=“text/javascript”>
-      KLAP_FLEX.initWallets({orderId: order_id, wallets: [“applePay”], transparent: false});
-  </script>
--->
 </head>
-
 
 <body>
 
+<!-- Navbar fija superior -->
+<nav class="navbar">
+  <a href="/" class="navbar-brand">
+    <!-- Reemplaza con la URL de tu logo -->
+    <img 
+      src="https://crm-optimist.pages.dev/logo.png" 
+      alt="Optimist Logo" 
+      class="navbar-logo"
+      onerror="this.style.display='none'"
+    >
+    <div>
+      <div class="navbar-title">OPTIMIST</div>
+      <div class="navbar-subtitle">Sistema de Enfriamiento Hogar</div>
+    </div>
+  </a>
+</nav>
+
 <header>
-  <h1>Sistema de Enfriamiento Optimist® Hogar</h1>
+  <h1>Sistema de Enfriamiento Optimist&reg; Hogar</h1>
   <p>Climatiza tu terraza o quincho con tecnología profesional</p>
 </header>
 
@@ -104,8 +172,8 @@
       <li>Sistema completo para instalar</li>
       <li>Boquillas anti-goteo</li>
       <li>Bomba de alta presión</li>
-      <li>Instalación profesional</li>
-      <li>Garantía Optimist®</li>
+      <li>Instalaci&oacute;n profesional</li>
+      <li>Garant&iacute;a Optimist&reg;</li>
     </ul>
 
     <div class="precio">$990.800 CLP</div>
@@ -128,21 +196,21 @@
     <a href="https://wa.me/56988379359" class="btn">Hablar por WhatsApp</a>
   </section>
 
-<!-- GARANTÍA -->
+<!-- GARANT&Iacute;A -->
   <section>
-    <h2 class="center">Pruébalo sin riesgo</h2>
+    <h2 class="center">Pru&eacute;balo sin riesgo</h2>
     <p class="center">
       Si no sientes la diferencia este verano,<br>
       <strong>lo retiramos.</strong>
     </p>
-    <p class="center">✅ Satisfacción garantizada por 30 días</p>
+    <p class="center">✅ Satisfacci&oacute;n garantizada por 30 d&iacute;as</p>
   </section>
 
   <!-- URGENCIA -->
   <section>
     <div class="urgency">
-      <h3>⏰ Precio especial por término de temporada</h3>
-      <p>Oferta válida hasta agotar stock.</p>
+      <h3>⏰ Precio especial por t&eacute;rmino de temporada</h3>
+      <p>Oferta v&aacute;lida hasta agotar stock.</p>
     </div>
   </section>
 
@@ -160,7 +228,7 @@
   
 
 <footer>
-  © 2026 Optimist® Spa - Todos los derechos reservados
+  &copy; 2026 Optimist&reg; Spa - Todos los derechos reservados
 </footer>
 
 
@@ -241,15 +309,15 @@ document.getElementById("btnPagar").addEventListener("click", async () => {
 });
 </script>
 
-<!—//Apple pay—>
+<!--&mdash;//Apple pay&mdash;-->
 
-<script src=“https://sandbox.mcdesaqa.cl/pagos/checkout-flex/v1/main.min.js” type=“text/javascript”></script>
-<script type=“text/javascript”>
-KLAP_FLEX.initWallets({orderId: order_id, wallets: [“applePay”], transparent: false});
+<script src="https://sandbox.mcdesaqa.cl/pagos/checkout-flex/v1/main.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+KLAP_FLEX.initWallets({orderId: order_id, wallets: ["applePay"], transparent: false});
 </script>
 
 
-<div id=“klap-apple-pay” class=“d-inline-block w-100”></div>
+<div id="klap-apple-pay" class="d-inline-block w-100"></div>
 
-</body>
-</html>
+
+</section></body></html>
