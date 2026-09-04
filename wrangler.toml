@@ -1,4 +1,3 @@
-
 # ===========================
 # CONFIGURACIÓN PRINCIPAL
 # ===========================
@@ -65,9 +64,3 @@ database_id = "preview-db-id-aqui"
 # MIGRACIONES D1 (opcional)
 # ===========================
 # Para ejecutar: wrangler d1 execute crm-optimist-db --file=migrations/0001_initial.sql
-
-
-
-[[routes]]
-pattern = "crm.optimist.cl"
-custom_domain = true
