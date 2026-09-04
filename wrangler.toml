@@ -1,3 +1,73 @@
+
+# ===========================
+# CONFIGURACIÓN PRINCIPAL
+# ===========================
+name = "crm-optimist-api"
+main = "backend/src/index.ts"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ===========================
+# BASE DE DATOS D1
+# ===========================
+[[d1_databases]]
+binding = "DB"
+database_name = "crm-optimist-db"
+database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  # ← Reemplaza con tu ID real
+
+# ===========================
+# ALMACENAMIENTO R2 (archivos)
+# ===========================
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "crm-optimist-files"
+
+# ===========================
+# CACHE KV (sesiones, rate limit)
+# ===========================
+[[kv_namespaces]]
+binding = "CACHE"
+id = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"  # ← Reemplaza con tu ID real
+preview_id = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+
+# ===========================
+# VARIABLES DE ENTORNO
+# ===========================
+[vars]
+ENVIRONMENT = "production"
+JWT_SECRET = "tu-secreto-largo-aleatorio-minimo-32-caracteres"
+FRONTEND_URL = "https://crm.optimist.cl"
+ALLOWED_ORIGINS = "https://crm.optimist.cl,https://optimist.cl"
+
+# ===========================
+# DOMINIO PERSONALIZADO
+# ===========================
+[site]
+bucket = "./frontend/dist"
+
+[[routes]]
+pattern = "crm-optimist-api.optimist.cl"
+custom_domain = true
+
+# ===========================
+# ENTORNO DE DESARROLLO (preview)
+# ===========================
+[env.preview]
+name = "crm-optimist-api-preview"
+vars = { ENVIRONMENT = "preview", JWT_SECRET = "preview-secret-key" }
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "crm-optimist-db-preview"
+database_id = "preview-db-id-aqui"
+
+# ===========================
+# MIGRACIONES D1 (opcional)
+# ===========================
+# Para ejecutar: wrangler d1 execute crm-optimist-db --file=migrations/0001_initial.sql
+
+
+
 [[routes]]
 pattern = "crm.optimist.cl"
 custom_domain = true
